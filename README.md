@@ -94,3 +94,44 @@ npm run test:ci      # tests en modo CI (sin watch, con reporte)
 docker build -t calculadora .   # construye imagen
 docker run calculadora add 10 5 # ejecuta en contenedor1
 ```
+
+---
+
+## Entrega — Taller Completado
+
+### Autores
+
+- Samuel XE2
+- [Nombre del compañero]
+
+### Checklist completado
+
+✅ **Tests** (`tests/calculator.test.js`)
+- 15+ casos de prueba implementados
+- Cobertura ≥ 80% de líneas
+- Scripts `test` y `test:ci` en `package.json`
+
+✅ **Linting** (`eslint.config.js`)
+- ESLint instalado y configurado
+- Código fuente pasa sin errores
+- Script `lint` en `package.json`
+
+✅ **Dockerfile**
+- Dockerfile creado con imagen base Node.js LTS
+- Usuario no-root configurado
+- Build optimizado con COPY selectivo
+
+✅ **Pipeline CI/CD** (`.github/workflows/pipeline.yml`)
+- 3 jobs configurados: ESLint, Jest Tests, Docker Build
+- Jobs paralelos para lint y tests
+- Docker Build depende de los anteriores (`needs`)
+- Ejecuta en push/PR a `main`
+
+### Evidencia del pipeline funcionando
+
+El pipeline se activó correctamente tras mover los archivos a la raíz del repositorio. Todos los jobs pasaron exitosamente:
+
+- ESLint: ✅ 15s
+- Jest Tests: ✅ 14s
+- Docker Build: ✅ 14s
+
